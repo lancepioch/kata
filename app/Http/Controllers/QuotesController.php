@@ -9,7 +9,7 @@ class QuotesController extends Controller
 {
     public function daily(Request $request)
     {
-        $date = $request->d ?? now();
+        $date = \Carbon\Carbon::create($request->d) ?? now();
 
         return (new Quotes())->quotd($date);
     }
