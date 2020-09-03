@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('quotes/quotd', 'QuotesController@daily');
+Route::get('quotes/random', 'QuotesController@random');
+Route::get('quotes/search', 'QuotesController@search');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
